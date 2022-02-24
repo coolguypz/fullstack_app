@@ -1,10 +1,11 @@
 import React from 'react';
+import './form.css';
 
 const Form = (props) => {
 	return (
 		<div className='form'>
 			<div className='input_div'>
-				<label htmlFor='username'>Username</label>
+				<label htmlFor='username'>Username : </label>
 				<input
 					type='text'
 					id='username'
@@ -15,7 +16,7 @@ const Form = (props) => {
 				/>
 			</div>
 			<div className='input_div'>
-				<label htmlFor='password'>password</label>
+				<label htmlFor='password'>Password : </label>
 				<input
 					type='text'
 					id='password'
@@ -26,7 +27,7 @@ const Form = (props) => {
 				/>
 			</div>
 			<div className='input_div'>
-				<label htmlFor='email'>email</label>
+				<label htmlFor='email'>Email</label>
 				<input
 					type='text'
 					id='email'
@@ -36,10 +37,8 @@ const Form = (props) => {
 					onChange={props.handleChange}
 				/>
 			</div>
-			<div className='button'>
-				<button type='submit' onClick={props.handleSubmit}>
-					Submit
-				</button>
+			<div className='button' type='submit' onClick={props.handleSubmit}>
+				Submit
 			</div>
 		</div>
 	);

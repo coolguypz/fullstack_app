@@ -1,0 +1,35 @@
+.form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 20%;
+}
+
+.input_div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px;
+}
+
+label {
+	text-align: center;
+	cursor: pointer;
+}
+
+input {
+	width: 70%;
+	height: 35px;
+	cursor: pointer;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5%;
+	width: 100%;
+	border-radius: 5px;
+	background-color: rgb(200, 204, 207);
+	padding: 6px;
+}

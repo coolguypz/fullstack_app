@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './register.css'
 import Form from './Form';
 import axios from 'axios';
 
