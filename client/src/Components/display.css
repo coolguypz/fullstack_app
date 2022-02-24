@@ -1,0 +1,43 @@
+.display {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 5%;
+}
+
+.col-head {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 1px solid black;
+	width: 100%;
+}
+.col-1 {
+	padding: 1% 20%;
+}
+.col-2 {
+	padding: 1% 10%;
+}
+.col-3 {
+	padding: 1% 20%;
+}
+.col-4 {
+	padding: 1% 20%;
+}
+
+.col-body {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.displayData {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}

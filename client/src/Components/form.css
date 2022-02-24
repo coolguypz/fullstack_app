@@ -33,3 +33,9 @@ input {
 	background-color: rgb(200, 204, 207);
 	padding: 6px;
 }
+
+@media only screen and (max-width: 768px) {
+	.form {
+		width: 70%;
+	}
+  }

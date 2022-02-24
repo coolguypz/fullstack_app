@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './register.css'
+import './register.css';
 import Form from './Form';
 import axios from 'axios';
+import Display from './Display';
 
 const Register = (props) => {
 	const [inputData, setinputData] = useState({
@@ -32,6 +33,7 @@ const Register = (props) => {
 				handleSubmit={handleSubmit}
 				handleChange={handleChange}
 			/>
+			<Display data = {props.data}/>
 		</div>
 	);
 };
