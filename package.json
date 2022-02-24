@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "ReactJs, NodeJs, mySQL",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolguypz/fullstack_app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coolguypz/fullstack_app/issues"
+  },
+  "homepage": "https://github.com/coolguypz/fullstack_app#readme"
+}
