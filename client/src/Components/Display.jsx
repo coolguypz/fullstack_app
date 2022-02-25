@@ -2,9 +2,9 @@ import React from 'react';
 import './display.css';
 
 const Display = (props) => {
-	const apiData = props.data?.map((v) => {
+	const apiData = props.data?.map((v,i) => {
 		return (
-			<div className='displayData'>
+			<div key={i} className='displayData'>
 				<div className='col-1'>{v.id}</div>
 				<div className='col-2'>{v.username}</div>
 				<div className='col-3'>{v.email}</div>

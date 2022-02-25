@@ -26,7 +26,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			<Register location={location} data={data} />
+			<Register location={location} data={data}/>
 		</div>
 	);
 }
