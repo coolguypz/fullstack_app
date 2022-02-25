@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './register.css';
 import Form from './Form';
 import axios from 'axios';
@@ -6,12 +6,32 @@ import Display from './Display';
 
 const Register = (props) => {
 
-  const [inputData, setinputData] = useState({
+    const [apiData, setApiData] = useState();
+    const [location, setlocation] = useState();
+    const [inputData, setinputData] = useState({
     username: '',
     password: '',
     email: '',
   });
 
+
+	const getLocation = async () => {
+		await axios
+			.get(`https://geolocation-db.com/json/`)
+			.then((res) => setlocation(res.data));
+	};
+
+  const getAPIData = async () => {
+		await axios
+			.get(`http://localhost:3001/api`)
+			.then((res) => setApiData(res.data));
+	};
+
+useEffect(() => {
+		getAPIData();
+    getLocation();
+	}, []);
+   
 
   const handleChange = (e) => {
     setinputData({ ...inputData, [e.target.name]: e.target.value });
@@ -20,13 +40,26 @@ const Register = (props) => {
   const handleSubmit = () => {
     axios.post(`http://localhost:3001/api/post`, {
       ...inputData,
-      ip: props.location.IPv4,
-      country: props.location.country_name,
-      state: props.location.state,
-      city: props.location.city,
-      zipcode: props.location.postal,
-    });
+      ip: location.IPv4,
+      country: location.country_name,
+      state: location.state,
+      city: location.city,
+      zipcode: location.postal
+    }).then(()=>{
+      setApiData([
+        ...apiData,
+        {
+        ...inputData,
+        ip: location.IPv4,
+        country: location.country_name,
+        state: location.state,
+        city: location.city,
+        zipcode: location.postal
+        }]
+        )
+    })
   };
+
 
   return (
     <div className='register'>
@@ -35,7 +68,7 @@ const Register = (props) => {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
-      <Display data={props.data} />
+      <Display data={apiData} />
     </div>
   );
 };
