@@ -37,4 +37,26 @@ app.post('/api/post', async (req, res) => {
   );
 });
 
+app.delete(`/api/delete/:id`, (req,res)=>{
+  console.log("first: ",req.params)
+  const id = req.params.id;
+  const del = `delete from test where id = ${id}`
+  db.execute(del,(err,result)=>{
+    if(err) console.log(err)
+    else console.log("delete sucess")
+  })
+})
+
+app.put(`/api/update`, (req,res)=>{
+  
+  const id = req.body.id;
+  const email = req.body.email;
+
+  const upd = `update test set email = ${email} where id = ${id}`
+  db.execute(upd,(err,result)=>{
+    if(err) console.log(err)
+    else console.log("delete sucess")
+  })
+})
+
 app.listen(PORT, () => console.log('server is listening on PORT ' + PORT));

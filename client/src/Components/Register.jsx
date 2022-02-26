@@ -45,7 +45,7 @@ useEffect(() => {
       state: location.state,
       city: location.city,
       zipcode: location.postal
-    }).then(()=>{
+    })
       setApiData([
         ...apiData,
         {
@@ -57,8 +57,27 @@ useEffect(() => {
         zipcode: location.postal
         }]
         )
-    })
   };
+
+  const [update, setupdate] = useState()
+
+    const handleUpdate = (id) => {
+      apiData.forEach(v => {
+        if (v.id  === id){
+          console.log(v.email,v.id,v.id)
+        }
+      })
+      // axios.put(`http://localhost:3001/api/update/`,{
+
+      // })
+
+    }
+
+
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:3001/api/delete/${id}`)
+  }
+
 
 
   return (
@@ -68,7 +87,8 @@ useEffect(() => {
         handleSubmit={handleSubmit}
         handleChange={handleChange}
       />
-      <Display data={apiData} />
+      <Display data={apiData} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+      
     </div>
   );
 };
