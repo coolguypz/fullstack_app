@@ -6,7 +6,6 @@ const Display = (props) => {
 	const apiData = props.data?.map((v,i) => {
 		return (
 			<div key={i} className='displayData'>
-				
 				<div className='col-1'>{v.username}</div>
 				<div className='col-2'>{v.email}</div>
 				<div className='col-3'>{v.ip}</div>

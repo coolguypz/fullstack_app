@@ -56,8 +56,6 @@ const Register = (props) => {
 		]);
 	};
 
-	const [update, setupdate] = useState();
-
 	const handleUpdate = (id) => {
 		apiData.forEach((v) => {
 			if (v.id === id) {
@@ -80,11 +78,11 @@ const Register = (props) => {
 				handleSubmit={handleSubmit}
 				handleChange={handleChange}
 			/>
-			<Display
+			{apiData? <Display
 				data={apiData}
 				handleDelete={handleDelete}
 				handleUpdate={handleUpdate}
-			/>
+			/> :""}
 		</div>
 	);
 };
